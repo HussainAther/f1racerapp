@@ -38,7 +38,7 @@
 
       axios.get(`https://ergast.com/api/f1/${season}/${round}/driverstandings.json`)
         .then(function(response) {
-          const data = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings;
+          const data = response.data.MRData.StandingsTable.StandingsLists[0].DriverStandings.slice(0, 7);
           renderTable(data);
         })
         .catch(function(error) {
